@@ -20,6 +20,14 @@ function App() {
       setInput([]);
     }
   };
+  const removeItem = (index) => {
+    // console.log(index);
+    setodoitem((todoitem) => {
+      return todoitem.filter((arrayelem, id) => {
+        return id != index;
+      });
+    });
+  };
   return (
     <div className='todo_main_outer'>
       <div className='todo_main'>
@@ -39,7 +47,10 @@ function App() {
 
         <ul>
           {todoitem.map((todoitem, index) => (
-            <li key={index}>{todoitem}</li>
+            <li key={index}>
+              <span onClick={() => removeItem(index)}> -- </span>
+              {todoitem}
+            </li>
           ))}
         </ul>
       </div>
