@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 import Swal from 'sweetalert2';
 // import todoitems from './component/todoitems';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [todoitem, setodoitem] = useState([]);
   const [input, setInput] = useState('');
   const addTodo = (e) => {
-    if (input == '') {
+    if (input === '') {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -24,7 +26,7 @@ function App() {
     // console.log(index);
     setodoitem((todoitem) => {
       return todoitem.filter((arrayelem, id) => {
-        return id != index;
+        return id !== index;
       });
     });
   };
@@ -48,7 +50,9 @@ function App() {
         <ul>
           {todoitem.map((todoitem, index) => (
             <li key={index}>
-              <span onClick={() => removeItem(index)}> -- </span>
+              <span className='iconClass' onClick={() => removeItem(index)}>
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
               {todoitem}
             </li>
           ))}
