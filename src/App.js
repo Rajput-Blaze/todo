@@ -9,7 +9,7 @@ function App() {
   const [todoitem, setodoitem] = useState([]);
   const [input, setInput] = useState('');
   const addTodo = (e) => {
-    if (input === '') {
+    if (input == '') {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
