@@ -1,8 +1,9 @@
 # [click here to view Demo ](https://todo-puce-alpha.vercel.app/)
 
-## Available Scripts
+<img width="80%" src="https://iili.io/2WjMqQ.gif" alt="image" border="0">
 
-In the project directory, you can run:
+
+
 
 ### `yarn start`
 
